@@ -18,23 +18,27 @@
         <!-- place navbar here -->
     </header>
     <main>
-        <form action="POST" action="cliente-insert.php"></form>
+        <form>
+        
         <p>
-            <label for="inCodigo"></label>
-            <input type="numeber" name="codigo" id="inCodigo">
+            <label for="inCodigo">codigo</label>
+            <input type="number" name="codigo" id="inCodigo">
         </p>
         <p>
-            <label for="inCodigo"></label>
-            <input type="text" name="codigo" id="inNome">
+            <label for="inCodigo">nome</label>
+            <input type="text" name="nome" id="inNome">
         </p>
         <p>
-            <label for="inCodigo"></label>
-            <input type="email" name="codigo" id="inEmail">
+            <label for="inCodigo">email</label>
+            <input type="email" name="email" id="inEmail">
         </p>
         <p>
             <input type="reset">
             <input type="submit">
         </p>
+    </form>
+ <script src="js/ajax-submit.js"></script>
+ <div id="resp"></div>
     </main>
     <footer>
         <!-- place footer here -->
