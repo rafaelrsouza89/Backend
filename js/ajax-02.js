@@ -24,6 +24,6 @@ btn.addEventListener("click", (e) => {
          alert(`Erro: ${req.status} ${req.statusText}`);
       }
    }
-   req.open("GET", "ajax-03.json");
+   req.open("GET", "busca-clientes-csv.php");   
    req.send();
 })

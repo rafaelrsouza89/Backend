@@ -1,12 +1,11 @@
 document.addEventListener("submit", (e) => {
     const form = document.querySelector("form");
-    let data = {
-        codigo : form.inCodigo.value,
-        nome   : form.inNome.value,
-        email  : form.inEmail.value
+    let cliente = new FormData();
+    cliente.append("codigo", form.inCodigo.value);
+    cliente.append('nome', form.inNome.value);
+    cliente.append('email', form.inEmail.value);
 
-    };
-    console.log(data);
+    console.log(cliente);
     e.preventDefault();
     
     const req = new XMLHttpRequest();
@@ -14,14 +13,14 @@ document.addEventListener("submit", (e) => {
         if (req.status == 200){
             let resp = this.responseText;
             document.getElementById("resp").innerText = resp;
+            form.reset();
         }
         else{
             alert(`Erro: ${req.status} ${req.statusText}`);
         }
     }
-    req.open("POST", "cliente-insert.php");
-    req.setRequestHeader('Content-type', 'application/json, chartset=UTF-8');
-    req.send(JSON.stringify(data));
+    req.open("POST", "cliente-insert-formdata.php");
+    req.send(cliente);
    
 })
 

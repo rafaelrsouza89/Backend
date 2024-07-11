@@ -23,7 +23,7 @@ if ($file) {
          $newdata[$header[$i]] = $data[$i];
       }
       //print_r($newdata);
-      array_push($aClientes, $data);
+      array_push($aClientes, $newdata);
    }
    // converter array em json
    $json = json_encode($aClientes);
