@@ -60,7 +60,9 @@ function buscaClientes() {
 }
 function delCliente(id){
    if(confirm("Corfima a exclusão do registro?") == true){
-      console.log(id);
+      let data = new FormData();
+      data.append("id", id);
+      console.log(data);
       let xhr = new XMLHttpRequest();
       xhr.onload = function(){
          if(xhr.status==200){
